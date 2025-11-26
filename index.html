@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+<title>Invitación</title>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invitación a la fiesta">
+<meta property="og:description" content="¡Te invitamos a celebrar con nosotros!">
+<meta property="og:image" content="https://raw.githubusercontent.com/geraldream/cumpleisaacpliplim/953d75edd718f34f73c4786b3d320e33d70a9f86/Portada.jpg">
+<meta property="og:url" content="https://geraldream.github.io/cumpleisaacpliplim/">
+
+<style>
+html,body{margin:0;padding:0;background:#fff;width:100%;height:100%;overflow:hidden}
+
+.fondo{position:relative;margin:0 auto;width:400px;height:100dvh;
+  background:url('Fondo.jpg') no-repeat center top;
+  background-size:100% 100%;overflow:hidden}
+
+.cintillo,.invitado,.rayas,.direccion,.payaso,.flecha-izq,.flecha-der,.contador,.player{position:absolute}
+.cintillo{top:8%;left:50%;transform:translateX(-50%);width:90%;z-index:2}
+.invitado{top:40%;left:50%;transform:translateX(-50%);width:65%;z-index:2}
+.rayas{top:45%;left:50%;transform:translateX(-50%);width:80%;z-index:0}
+.direccion{top:45%;left:50%;transform:translateX(-50%);width:80%;z-index:3}
+.payaso{bottom:0;left:0;width:180px;max-width:45%;z-index:1}
+.flecha-izq{top:62%;left:10%;width:150px;z-index:4}
+.flecha-der{top:62%;right:10%;width:150px;z-index:4}
+img{width:100%;height:auto;display:block}
+
+/* Contador */
+.contador{bottom:8%;left:62%;transform:translateX(-50%);
+  display:inline-block;text-align:center;
+  font-family:'Comic Sans MS',cursive,sans-serif;
+  color:#fff;font-weight:bold;z-index:5;
+  background:linear-gradient(45deg,#ff0000,#ffcc00);
+  border:2px dashed #000;border-radius:10px;
+  padding:5px 8px;box-shadow:0 0 5px rgba(0,0,0,.3);
+  width:fit-content}
+.contador h3{margin:0 0 6px;font-size:1.2em;color:#fff;text-shadow:1px 1px #000}
+.contador .fila{display:flex;justify-content:center;gap:18px;margin-bottom:3px}
+.contador .unidad{font-size:1.6em;color:#ffcc00;text-shadow:1px 1px #000;
+  animation: zoomNumber 1s ease-in-out infinite alternate;}
+.contador .label{font-size:.85em;color:#fff;text-shadow:1px 1px #000}
+
+@keyframes zoomNumber {0%{transform:scale(1);}100%{transform:scale(1.15);color:#fff700;}}
+
+/* Player */
+.player{bottom:2%;right:5%;z-index:6}
+.player button{background:linear-gradient(45deg,#ff0000,#ffcc00);
+  border:2px solid #000;border-radius:50%;
+  width:45px;height:45px;font-size:20px;color:#000;
+  cursor:pointer;box-shadow:0 0 5px rgba(0,0,0,.4);
+  display:flex;align-items:center;justify-content:center}
+.player button:hover{transform:scale(1.08)}
+.player button:active{transform:scale(.98)}
+
+@keyframes pulseGlow{0%{transform:scale(1);filter:drop-shadow(0 0 1px #ffcc00);}
+50%{transform:scale(1.04);filter:drop-shadow(0 0 3px #ff0000);}
+100%{transform:scale(1);filter:drop-shadow(0 0 1px #ffcc00);} }
+.flecha-izq img,.flecha-der img{animation:pulseGlow 2s infinite ease-in-out}
+
+/* Animaciones */
+@keyframes payasoShow{0%{transform:translateY(120%);opacity:0;}
+10%{transform:translateY(0);opacity:1;}
+25%{transform:translateY(-5px) rotate(-4deg);}
+50%{transform:translateY(0) rotate(0deg);}
+75%{transform:translateY(-5px) rotate(4deg);}
+100%{transform:translateY(0) rotate(0);} }
+.payaso img{animation:payasoShow 13s ease-in-out infinite;will-change:transform,opacity;}
+
+@keyframes cintilloShow{0%{transform:translateY(-120%) scale(0.8);opacity:0;}
+10%{transform:translateY(0) scale(1);opacity:1;}
+30%{transform:rotate(-3deg);}
+50%{transform:rotate(3deg);}
+70%{transform:rotate(-3deg);}
+100%{transform:rotate(0deg);} }
+.cintillo img{animation:cintilloShow 13s ease-in-out infinite;will-change:transform,opacity;}
+
+/* Responsive */
+@media(max-width:600px){
+  .fondo{width:100vw;height:100dvh;background-size:100% 100%;background-position:center top}
+  .cintillo{top:8%;width:85%}
+  .invitado{top:40%;width:70%}
+  .rayas{top:45%;width:80%}
+  .direccion{top:45%;width:80%}
+  .payaso{width:45%;left:0;bottom:0}
+  .flecha-izq{top:63%;left:10%;width:135px}
+  .flecha-der{top:63%;right:10%;width:135px}
+  .contador{bottom:8%;left:62%;transform:translateX(-50%);padding:5px 8px;}
+  .contador .unidad{font-size:1.4em}
+  .contador .label{font-size:.75em}
+}
+</style>
+</head>
+
+<body>
+<div class="fondo" id="fondo">
+
+  <!-- ===== Redes Sociales ===== -->
+  <div style="position:absolute;top:1%;right:5%;display:flex;gap:12px;z-index:7">
+    <a href="https://wa.me/525530759268?text=Hola..." target="_blank" rel="noopener">
+      <img src="Whatsapp.png" alt="WhatsApp" style="width:32px;height:32px;object-fit:contain;animation:pulse 2s infinite">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61581110590628" target="_blank" rel="noopener">
+      <img src="Facebook.png" alt="Facebook" style="width:32px;height:32px;object-fit:contain;animation:pulse 2s infinite">
+    </a>
+    <a href="https://www.instagram.com/geraldreamworks/" target="_blank" rel="noopener">
+      <img src="Instagram.png" alt="Instagram" style="width:32px;height:32px;object-fit:contain;animation:pulse 2s infinite">
+    </a>
+  </div>
+
+  <!-- ===== Elementos gráficos ===== -->
+  <div class="cintillo"><img src="Cumple.png" alt="Cumple 5 Años"></div>
+  <div class="invitado"><img src="Invitado.png" alt="¡Estás Invitado!"></div>
+  <div class="rayas"><img src="Rayas.png" alt="Decoración"></div>
+  <div class="direccion"><img src="Direccion.png" alt="Dirección"></div>
+  <div class="payaso"><img src="Payaso.png" alt="Payaso decorativo"></div>
+
+  <!-- ===== Botones animados ===== -->
+  <a class="flecha-izq" href="https://wa.me/525530759268?text=Hola,%20quiero%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20de%20cumpleaños%20de%20Isaac..." target="_blank" rel="noopener">
+    <img src="Flecha izquierda.png" alt="Confirmar por WhatsApp">
+  </a>
+  <a class="flecha-der" href="https://maps.app.goo.gl/juPybRVTgdBe4M3T8" target="_blank" rel="noopener">
+    <img src="Flecha derecha.png" alt="Ver ubicación en Google Maps">
+  </a>
+
+  <!-- ===== Contador ===== -->
+  <div class="contador">
+    <h3>Faltan:</h3>
+    <div class="fila">
+      <div>
+        <div class="unidad" id="dias">00</div>
+        <div class="label">días</div>
+      </div>
+      <div>
+        <div class="unidad" id="horas">00</div>
+        <div class="label">horas</div>
+      </div>
+    </div>
+    <div class="fila">
+      <div>
+        <div class="unidad" id="minutos">00</div>
+        <div class="label">min.</div>
+      </div>
+      <div>
+        <div class="unidad" id="segundos">00</div>
+        <div class="label">seg.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Player ===== -->
+  <div class="player">
+    <button id="playBtn" aria-label="Reproducir/Pausar música">🎵</button>
+    <audio id="musica" src="Musica.mp3" loop></audio>
+  </div>
+</div>
+
+<!-- ===== Script interno ===== -->
+<script>
+/* ===== Contador ===== */
+const evento = new Date("2025-12-27T16:00:00").getTime();
+function actualizarContador() {
+  const ahora = Date.now();
+  const diff = Math.max(0, evento - ahora);
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById("dias").textContent = String(dias).padStart(2, '0');
+  document.getElementById("horas").textContent = String(horas).padStart(2, '0');
+  document.getElementById("minutos").textContent = String(minutos).padStart(2, '0');
+  document.getElementById("segundos").textContent = String(segundos).padStart(2, '0');
+}
+actualizarContador();
+setInterval(actualizarContador, 1000);
+
+/* ===== Música ===== */
+const audio = document.getElementById('musica');
+const playBtn = document.getElementById('playBtn');
+const fondo = document.getElementById('fondo');
+
+function setBtnIcon(playing) { playBtn.textContent = playing ? '⏸️' : '🎵'; }
+
+async function intentarAutoplayPrimeraVez() {
+  try {
+    const yaPermitido = localStorage.getItem('musicAllowed') === 'true';
+    if (yaPermitido) {
+      await audio.play();
+      setBtnIcon(true);
+      return;
+    }
+    await audio.play();
+    localStorage.setItem('musicAllowed', 'true');
+    setBtnIcon(true);
+  } catch (err) {
+    localStorage.setItem('musicAllowed', 'false');
+    setBtnIcon(false);
+  }
+}
+
+function habilitarClickGlobal() {
+  const clickGlobal = async () => {
+    try {
+      await audio.play();
+      localStorage.setItem('musicAllowed', 'true');
+      setBtnIcon(true);
+    } catch (e) {}
+  };
+  fondo.addEventListener('click', clickGlobal, { once: true });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  audio.load();
+  await intentarAutoplayPrimeraVez();
+  habilitarClickGlobal();
+});
+
+playBtn.addEventListener('click', async (e) => {
+  e.stopPropagation();
+  try {
+    if (audio.paused) {
+      await audio.play();
+      localStorage.setItem('musicAllowed', 'true');
+      setBtnIcon(true);
+    } else {
+      audio.pause();
+      setBtnIcon(false);
+    }
+  } catch (err) {}
+});
+
+audio.addEventListener('ended', () => setBtnIcon(false));
+</script>
+</body>
+</html>
